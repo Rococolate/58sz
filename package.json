@@ -1,0 +1,24 @@
+{
+  "name": "58sz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rococolate/58sz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rococolate/58sz/issues"
+  },
+  "homepage": "https://github.com/Rococolate/58sz#readme",
+  "dependencies": {
+    "chrome-remote-interface": "^0.26.1",
+    "express": "^4.16.3"
+  }
+}
