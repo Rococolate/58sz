@@ -64,3 +64,4 @@ typings/
 
 # Mac
 .DS_Store
+/data/index.js
