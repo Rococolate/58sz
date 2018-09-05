@@ -20,12 +20,14 @@ function fnRoomDom(roomDom) {
   const title = roomDom.querySelector('.des > h2 > a').innerText;
   const url = roomDom.querySelector('.des > h2 > a').href;
   const size = roomDom.querySelector('.des .room').innerText.match(/\d+㎡/i)[0].replace('㎡','');
-  const add = roomDom.querySelector('.des .add').innerText;
+  const other = roomDom.querySelector('.des .add').innerText;
   const value = roomDom.querySelector('.listliright .money').innerText;
   const avatar = 'http:'+roomDom.querySelector('.img_list > a > img').getAttribute('lazy_src').split('?')[0].replace('/small','');
-  const timestamp = Date.now();
-  const id = url.match(/\d+x\.shtml/i)[0].replace('.shtml','');
-  return {title,url,size,add,avatar,value,timestamp,id}
+  const catch_time = Date.now();
+  const uid = url.match(/\d+x\.shtml/i)[0].replace('.shtml','');
+  const type = '一房';
+  const area = '宝安中心区';
+  return {title,url,size,other,avatar,value,catch_time,uid,type,area}
 }
 
 async function run(url){

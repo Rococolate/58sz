@@ -9,6 +9,8 @@ console.log(expression);
 const store = require('../../store/index.js');
 const localData = require('../../data/index.js');
 
+const zf = require('../model/zf.js');
+
 var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -17,7 +19,16 @@ var allowCrossDomain = function(req, res, next) {
   next();
 };
 
+
 router.use(allowCrossDomain);
+
+async function findAll(query){
+  await zf.findAll(query);
+}
+
+async function create(data){
+  await zf.create(data);
+}
 
 /* GET home page. */
 router.get('/serch',async function(req, res, next) {
@@ -30,6 +41,7 @@ router.post('/data',async function(req, res, next) {
   const nextUrl = req.body.nextUrl;
   const roomListData = req.body.roomListData;
   roomListData.forEach(item=>store.push(item));
+
   res.json({status:'0000'});
   if (nextUrl !== undefined ) {
     await codeIngection(nextUrl,expression);
